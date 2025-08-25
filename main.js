@@ -115,14 +115,14 @@ function doneTask(element){
 
 
 function start(mode){
-    tasks=JSON.parse(localStorage.getItem('tasks'));
-    if(mode==0){
+    if(localStorage.getItem('tasks'))tasks=JSON.parse(localStorage.getItem('tasks'));
+    if(mode==0 && tasks.length>0){
         renderAllTaks(tasks);
     }
-    else if(mode==1){
+    else if(mode==1 && tasks.length>0){
         renderActiveTaks(tasks);
     }
-    else if(mode==2){
+    else if(mode==2 && tasks.length>0){
         renderDoneTaks(tasks);
     }
     var addbtn=document.getElementById('addbtn');
